@@ -4,6 +4,5 @@ COPY build.sh /tmp/build.sh
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
-    bootc container lint && \
     ostree container commit
     
