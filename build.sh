@@ -2,23 +2,14 @@
 
 set -ouex pipefail
 
-### Install packages
+### Setup RPM Fusion
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+dnf install --nogpgcheck -y \
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-41.noarch.rpm
 
-# this installs a package from fedora repos
-dnf install -y tmux 
+### Install H.264
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+# To avoid getting into even more legal troubles, H.265 (HEVC) isn't included.
 
-#### Example for enabling a System Unit File
-
-systemctl enable podman.socket
+dnf install -y x264
