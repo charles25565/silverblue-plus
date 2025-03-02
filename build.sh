@@ -12,4 +12,8 @@ dnf install --nogpgcheck -y \
 
 # To avoid getting into even more legal troubles, H.265 (HEVC) isn't included.
 
-dnf install -y x264
+dnf install --allowerasing -y x264
+
+### Install some development tools
+
+dnf install -y @development-tools git
