@@ -16,4 +16,4 @@ dnf install --allowerasing -y x264
 
 ### Install some development tools
 
-dnf install -y @development-tools git
+dnf install -y @development-tools git mock
