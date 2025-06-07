@@ -12,7 +12,7 @@ dnf install --nogpgcheck -y \
 
 # To avoid getting into even more legal troubles, H.265 (HEVC) isn't included.
 
-dnf install --allowerasing -y x264
+dnf install --allowerasing -y x264 gstreamer1-plugin-openh264 mozilla-openh264
 
 ### Install some development tools
 
